@@ -1,0 +1,9 @@
+{% extends "../base.html" %}
+
+{% block content %}
+<ul>
+    {% for kontakt in object_list %}
+    <li>{{ kontakt.jmeno }}, {{ kontakt.prijmeni }}, {{ kontakt.email }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "../base.html" %}
+
+{% block content %}
+<ul>
+    {% for org in object_list %}
+    <li>{{ org.jmeno }}, {{org.identifikacni_cislo}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

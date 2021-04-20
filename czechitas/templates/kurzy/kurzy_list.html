@@ -1,0 +1,47 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+<style>
+    html {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+</style>
+<h1>Kurzy</h1>
+<table>
+    <tr>
+        <th>Jméno</th>
+        <th>Začátek</th>
+        <th>Konec</th>
+        <th>Popis</th>
+        <th>Cena</th>
+    </tr>
+    {% for kurz in object_list %}
+    <tr>
+        <td> {{ kurz.nazev }}</td>
+        <td> {{ kurz.zacatek }}</td>
+        <td> {{ kurz.konec }}</td>
+        <td> {{ kurz.popis }}</td>
+        <td> {{ kurz.cena }} Kč</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
