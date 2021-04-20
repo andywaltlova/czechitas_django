@@ -20,7 +20,7 @@ Czechitas potřebují spravovat nejen kurzy, ale i tradiční firemní agendu, m
 
 Vrať se nyní k práci na aplikaci crm.
 
-1. Vytvoř pohled KontakyView, který bude obsahovat seznam všech kontaktů, které jsou uložené v databázi. Pohledu vytvoř šablonu. U kontaktu zobrazuj jméno, přijímení a email. Pohledu přiřaď URL a otestuj ho.
-2. Přidej do své aplikace model Organizace, který bude obsahovat informace o organizacích. Každá organizace bude mít jméno, identifikační číslo a adresu. Zamysli se nad tím, jestli by adresu bylo dobré uložit jako jedno pole, nebo jestli např. uložit ulici, město a PSČ zvlášť.
+1. Vytvoř pohled `KontakyView`, který bude obsahovat seznam všech kontaktů, které jsou uložené v databázi. Pohledu vytvoř šablonu. U kontaktu zobrazuj jméno, přijímení a email. Pohledu přiřaď URL a otestuj ho.
+2. Přidej do své aplikace model `Organizace`, který bude obsahovat informace o organizacích. Každá organizace bude mít jméno, identifikační číslo a adresu. Zamysli se nad tím, jestli by adresu bylo dobré uložit jako jedno pole, nebo jestli např. uložit ulici, město a PSČ zvlášť.
 3. Proveď migraci databáze, zaregistruj model do administrátorského rozhraní a vytvoř nějakou testovací organizaci (např. svoji firmu nebo školu).
-4. Vytvoř pohled OrganizaceView, která zobrazí všechny organizace v databázi. Pohledu vytvoř šablonu. Pohledu přiřaď URL a otestuj ho.
+4. Vytvoř pohled `OrganizaceView`, která zobrazí všechny organizace v databázi. Pohledu vytvoř šablonu. Pohledu přiřaď URL a otestuj ho.
