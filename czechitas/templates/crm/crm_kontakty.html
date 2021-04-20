@@ -1,9 +1,9 @@
 {% extends "../base.html" %}
 
 {% block content %}
-<!--<ul>-->
-<!--    {% for kurz in object_list %}-->
-<!--    <li>{{ kurz.nazev }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
+<ul>
+    {% for kontakt in object_list %}
+    <li>{{ kontakt.jmeno }}, {{ kontakt.prijmeni }}, {{ kontakt.email }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
