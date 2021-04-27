@@ -24,3 +24,7 @@ Vrať se nyní k práci na aplikaci crm.
 2. Přidej do své aplikace model `Organizace`, který bude obsahovat informace o organizacích. Každá organizace bude mít jméno, identifikační číslo a adresu. Zamysli se nad tím, jestli by adresu bylo dobré uložit jako jedno pole, nebo jestli např. uložit ulici, město a PSČ zvlášť.
 3. Proveď migraci databáze, zaregistruj model do administrátorského rozhraní a vytvoř nějakou testovací organizaci (např. svoji firmu nebo školu).
 4. Vytvoř pohled `OrganizaceView`, která zobrazí všechny organizace v databázi. Pohledu vytvoř šablonu. Pohledu přiřaď URL a otestuj ho.
+
+Uprav své modely tak, aby bylo možné propojit organizaci a konkrétního člověka.
+
+5. Uvažuj, že chceš propojit jeden kontakt vždy s maximálně jednou organizací. Zamysli se nad tím, kde by mělo být umístěno pole ForeignKey. Pole umísti, proveď migraci databáze a zkus propojit některé ze svých záznamů.
