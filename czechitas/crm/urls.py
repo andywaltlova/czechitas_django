@@ -8,4 +8,7 @@ urlpatterns = [
     path('kontakty/<int:pk>', views.DetailKontaktView.as_view(), name='detail_kontakt'),
     path('organizace/', views.OrganizaceView.as_view(), name='organizace'),
     path('organizace/<int:pk>', views.DetailOrganizaceView.as_view(), name='detail_organizace'),
+    path('kontakty/pridani', views.VytvorKontakt.as_view(), name='pridani_kontaktu'),
+    path('kontakty/potvrzeni', views.PotvrzeniKontaktu.as_view(),
+         name='potvrzeni_kontaktu'),
 ]

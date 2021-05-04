@@ -1,5 +1,6 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from . import models
 
 def index(request):
@@ -34,3 +35,14 @@ class OrganizaceView(ListView):
 class DetailOrganizaceView(DetailView):
     model = models.Organizace
     template_name = "crm/detail_organizace.html"
+
+
+class VytvorKontakt(CreateView):
+    model = models.Kontakt
+    template_name = "crm/kontakt/pridani.html"
+    fields = ["jmeno", "prijmeni", "email", "datum_posledniho_kontaktu"]
+    success_url = reverse_lazy('potvrzeni_kontaktu')
+
+
+class PotvrzeniKontaktu(TemplateView):
+    template_name = "crm/kontakt/potvrzeni.html"
