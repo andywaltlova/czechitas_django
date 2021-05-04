@@ -12,3 +12,13 @@ class Kurz(models.Model):
     cena = models.IntegerField()
     kategorie = models.ForeignKey(Kategorie, on_delete=models.SET_NULL, null=True)
 
+    def __str__(self):
+        return str(self.nazev)
+
+
+class Prihlaska(models.Model):
+    email = models.CharField(max_length=100)
+    jmeno = models.CharField(max_length=100)
+    prijmeni = models.CharField(max_length=100)
+    motivace = models.TextField()
+    kurz = models.ForeignKey(Kurz, on_delete=models.SET_NULL, null=True)

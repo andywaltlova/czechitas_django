@@ -1,3 +1,8 @@
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,7 @@
         font-family: 'Roboto', sans-serif;
     }
 
-    h1,h2,h3,p {
+    div,h1,h2,h3,p {
         text-align: center;
     }
     table {
@@ -25,6 +30,9 @@
 
     th, td {
         padding: 10px;
+    }
+    .prihlaska{
+        padding: 0 10%;
     }
 </style>
 </head>
