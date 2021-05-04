@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Czechitas</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        html {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            text-align: center;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu -->
+    {% url 'home' as home %}
+    {% url 'kontakty' as kontakty %}
+    {% url 'organizace' as org %}
+    <p>
+        <a href="{{ home }}">Home</a> |
+        <a href="{{ kontakty }}">Kontakty</a> | 
+        <a href="{{ org }}">Organizace</a>
+    </p>
+    <p>
+        <a href="https://www.czechitas.cz/">
+            <img src="https://cdn.myshoptet.com/usr/www.shop-czechitas.cz/user/logos/logo.png" alt="Czechitas logo"
+                width="180" />
+        </a>
+    </p>
+
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

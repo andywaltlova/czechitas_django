@@ -13,7 +13,7 @@ class Kontakt(models.Model):
 
 class Organizace(models.Model):
     jmeno = models.CharField(max_length=100)
-    identifikacni_cislo = models.IntegerField()
+    ico = models.IntegerField()
     ulice = models.CharField(max_length=100)
     mesto = models.CharField(max_length=100)
     psc = models.IntegerField()

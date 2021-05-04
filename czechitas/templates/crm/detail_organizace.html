@@ -1,0 +1,10 @@
+{% extends "crm/base.html" %}
+
+{% block content %}
+<h2>{{ object.jmeno}}</h2>
+<h3>Detail</h3>
+<p>IČO: {{object.ico}}</p>
+<p>{{object.ulice}}, {{object.mesto}} {{object.psc}}</p>
+<p><a href="http://127.0.0.1:8000/crm/kontakty/{{ object.kontakt.pk }}">Kontaktni osoba</a></p>
+
+{% endblock %}

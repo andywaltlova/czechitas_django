@@ -10,7 +10,7 @@
         font-family: 'Roboto', sans-serif;
     }
 
-    h1 {
+    h1,h2,h3,p {
         text-align: center;
     }
     table {
@@ -29,6 +29,18 @@
 </style>
 </head>
 <body>
+    <!-- Menu -->
+    {% url 'index' as home %}
+    <p>
+        <a href="{{ home }}">Home</a>
+    </p>
+    <p>
+        <a href="https://www.czechitas.cz/">
+            <img src="https://cdn.myshoptet.com/usr/www.shop-czechitas.cz/user/logos/logo.png" alt="Czechitas logo"
+                width="180" />
+        </a>
+    </p>
+
     {% block content %}
     {% endblock %}
 </body>
