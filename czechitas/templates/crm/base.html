@@ -9,8 +9,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Czechitas</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <style>
 
         h1,
@@ -39,12 +37,12 @@
 
         .kontakt{
             padding: 0 10%;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-
     <!-- Menu -->
     {% url 'home' as home %}
     {% url 'kontakty' as kontakty %}
@@ -62,6 +60,7 @@
     </p>
 
     {% block content %}
+    {#Obsah specifickych sablon#}
     {% endblock %}
 </body>
 

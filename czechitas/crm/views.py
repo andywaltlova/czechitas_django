@@ -31,7 +31,6 @@ class OrganizaceView(ListView):
     model = models.Organizace
     template_name = "crm/crm_organizace.html"
 
-
 class DetailOrganizaceView(DetailView):
     model = models.Organizace
     template_name = "crm/detail_organizace.html"
@@ -40,8 +39,18 @@ class DetailOrganizaceView(DetailView):
 class VytvorKontakt(CreateView):
     model = models.Kontakt
     template_name = "crm/kontakt/pridani.html"
-    fields = ["jmeno", "prijmeni", "email", "datum_posledniho_kontaktu","organizace"]
+    fields = ["jmeno", "prijmeni", "email", "datum_posledniho_kontaktu", "organizace"]
     success_url = reverse_lazy('potvrzeni_kontaktu')
+
+
+class PotvrzeniKontaktu(TemplateView):
+    template_name = "crm/kontakt/potvrzeni.html"
+
+
+
+
+
+
 
 
 class VytvorKontaktOrganizaci(CreateView):
@@ -57,5 +66,4 @@ class VytvorKontaktOrganizaci(CreateView):
         return super().form_valid(form)
 
 
-class PotvrzeniKontaktu(TemplateView):
-    template_name = "crm/kontakt/potvrzeni.html"
+

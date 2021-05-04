@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class='kontakt'>
-    <form method="post">{% csrf_token %}
+    <form method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
