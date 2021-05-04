@@ -40,8 +40,21 @@ class DetailOrganizaceView(DetailView):
 class VytvorKontakt(CreateView):
     model = models.Kontakt
     template_name = "crm/kontakt/pridani.html"
+    fields = ["jmeno", "prijmeni", "email", "datum_posledniho_kontaktu","organizace"]
+    success_url = reverse_lazy('potvrzeni_kontaktu')
+
+
+class VytvorKontaktOrganizaci(CreateView):
+    model = models.Kontakt
+    template_name = "crm/kontakt/pridani.html"
     fields = ["jmeno", "prijmeni", "email", "datum_posledniho_kontaktu"]
     success_url = reverse_lazy('potvrzeni_kontaktu')
+
+    def form_valid(self, form):
+        id_organizace = self.kwargs['pk']
+        organizace = models.Organizace.objects.get(pk=id_organizace)
+        form.instance.organizace = organizace
+        return super().form_valid(form)
 
 
 class PotvrzeniKontaktu(TemplateView):

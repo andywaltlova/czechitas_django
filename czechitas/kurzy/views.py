@@ -21,6 +21,12 @@ class VytvorPrihlasku(CreateView):
     fields = ["email", "jmeno", "prijmeni", "motivace", "kurz"]
     success_url = reverse_lazy('potvrzeni_prihlasky')
 
+    def form_valid(self, form):
+        id_kurzu = self.kwargs['pk']
+        kurz = models.Kurz.objects.get(pk=id_kurzu)
+        form.instance.kurz = kurz
+        return super().form_valid(form)
+
 
 class PotvrzeniPrihlasky(TemplateView):
     template_name = "kurzy/prihlaska/potvrzeni.html"
