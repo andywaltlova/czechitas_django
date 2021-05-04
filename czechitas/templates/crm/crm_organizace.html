@@ -1,9 +1,18 @@
-{% extends "../base.html" %}
+{% extends "crm/base.html" %}
 
 {% block content %}
-<ul>
-    {% for org in object_list %}
-    <li>{{ org.jmeno }}, {{org.identifikacni_cislo}}</li>
+<h1>Organizace</h1>
+<table>
+    <tr>
+        <th>Jméno</th>
+        <th>IČO</th>
+        
+    </tr>
+    {% for o in object_list %}
+    <tr>
+        <td> <a href="{% url 'detail_organizace' o.pk %}">{{ o.jmeno }}</a></td>
+        <td> {{ o.ico }}</td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 {% endblock %}

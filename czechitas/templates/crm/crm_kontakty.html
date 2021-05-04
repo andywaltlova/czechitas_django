@@ -1,9 +1,19 @@
-{% extends "../base.html" %}
+{% extends "crm/base.html" %}
 
 {% block content %}
-<ul>
-    {% for kontakt in object_list %}
-    <li>{{ kontakt.jmeno }}, {{ kontakt.prijmeni }}, {{ kontakt.email }}</li>
+<h1>Kontakty</h1>
+<table>
+    <tr>
+        <th>Jméno</th>
+        <th>Přijmení</th>
+        <th>Email</th>
+    </tr>
+    {% for k in object_list %}
+    <tr>
+        <td> <a href="{% url 'detail_kontakt' k.pk %}">{{ k.jmeno }}</a></td>
+        <td> {{ k.prijmeni }}</td>
+        <td> {{ k.email }}</td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 {% endblock %}

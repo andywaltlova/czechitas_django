@@ -4,11 +4,6 @@ from django.views.generic import ListView, DetailView
 from . import models
 
 
-class MujPrvniPohled(View):
-    def get(self, request):
-        return HttpResponse('Vítej na webu Czechitas!')
-
-
 class KurzyView(ListView):
     model = models.Kurz
     template_name = "kurzy/kurzy_list.html"
