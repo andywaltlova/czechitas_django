@@ -1,0 +1,13 @@
+{% extends "../base.html" %}
+
+{% block content %}
+<h2>{{ object.nazev }}</h2>
+
+<h3>Kdy</h3>
+<p>{{ object.zacatek | date }} <br /> {{ object.zacatek | time }}-{{ object.konec | time }}</p>
+<h3>Cena</h3>
+<p>{{ object.cena }} Kč</p>
+
+<p>{{ object.popis }}</p>
+
+{% endblock %}

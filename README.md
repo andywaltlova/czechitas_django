@@ -5,7 +5,7 @@
 Django aplikace tvořená během výuky posledních 4 lekcí [dlouhodobého kurzu jazyka Python](https://www.czechitas.cz/cs/kalendar-akci/akce/24752/2021/02/16), který je organizovaný [Czechitas](https://www.czechitas.cz/en/).
 Oficiální materiály [zde](https://kodim.cz/czechitas/progr2-python/python-pro-web).
 
-### 1. + 2. lekce
+## Week 8 + 9 (6.4.2021 + 13.4.2021)
 Czechitas potřebují spravovat nejen kurzy, ale i tradiční firemní agendu, mezi kterou patří kontakty se sponzory, partnery a dalšími důležitými osobami. Vytvořme si základ jednoduchého CRM systému (Customer Relationship Management), který by takovou agendu dokázal obstarat.
 
 1. Uvnitř svého projektu `czechitas` založ novou aplikaci `crm`.
@@ -16,7 +16,7 @@ Czechitas potřebují spravovat nejen kurzy, ale i tradiční firemní agendu, m
 4. Přidej aplikaci do souboru `settings.py` a proveď migraci databáze.
 5. Zaregistruj model do administrátorského rozhraní a vytvoř testovací záznam.
 
-### 3. lekce
+## Week 10 (20.4.2021)
 
 Vrať se nyní k práci na aplikaci crm.
 
@@ -28,3 +28,13 @@ Vrať se nyní k práci na aplikaci crm.
 Uprav své modely tak, aby bylo možné propojit organizaci a konkrétního člověka.
 
 5. Uvažuj, že chceš propojit jeden kontakt vždy s maximálně jednou organizací. Zamysli se nad tím, kde by mělo být umístěno pole ForeignKey. Pole umísti, proveď migraci databáze a zkus propojit některé ze svých záznamů.
+
+## Week 11 (27.4.2021)
+
+Umožni uživatelům prohlédnout si detaily organizace.
+
+- Vytvoř pohledy pro zobrazení detailu organizace.
+- Pohledu vytvoř šablonu a provázej je pomocí odkazů s pohledy na seznam organizací. Na stránce zobrazuj všechny informace, které máš uložené v databázi.
+
+## Bonus
+Obdobným způsobem umožni uživatelům prohlédnout si detaily kontaktu.
