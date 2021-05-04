@@ -2,17 +2,21 @@
 
 {% block content %}
 <h1>Kontakty</h1>
+    <p><a href="{% url 'pridani_kontaktu' %}">Zde</a> si můžeš vytvořit nový kontakt.</p>
+    <br>
 <table>
     <tr>
         <th>Jméno</th>
         <th>Přijmení</th>
         <th>Email</th>
+        <th>Organizace</th>
     </tr>
     {% for k in object_list %}
     <tr>
         <td> <a href="{% url 'detail_kontakt' k.pk %}">{{ k.jmeno }}</a></td>
         <td> {{ k.prijmeni }}</td>
         <td> {{ k.email }}</td>
+        <td>{{k.organizace}}</td>
     </tr>
     {% endfor %}
 </table>

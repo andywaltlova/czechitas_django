@@ -1,6 +1,8 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from . import models
+
 
 def index(request):
     """View function for home page of site."""
@@ -22,9 +24,11 @@ class KontaktyView(ListView):
     model = models.Kontakt
     template_name = "crm/crm_kontakty.html"
 
+
 class DetailKontaktView(DetailView):
     model = models.Kontakt
     template_name = "crm/detail_kontaktu.html"
+
 
 class OrganizaceView(ListView):
     model = models.Organizace
@@ -34,3 +38,44 @@ class OrganizaceView(ListView):
 class DetailOrganizaceView(DetailView):
     model = models.Organizace
     template_name = "crm/detail_organizace.html"
+
+
+class VytvorKontakt(CreateView):
+    model = models.Kontakt
+    template_name = "crm/kontakt/pridani.html"
+    fields = ["jmeno", "prijmeni", "email", "datum_posledniho_kontaktu",
+              "organizace"]
+    success_url = reverse_lazy('potvrzeni_kontaktu')
+
+
+class PotvrzeniKontaktu(TemplateView):
+    template_name = "crm/kontakt/potvrzeni.html"
+
+
+class VytvorOrganizaci(CreateView):
+    model = models.Organizace
+    template_name = "crm/organizace/pridani.html"
+    fields = ["jmeno", "ico", "ulice", "mesto", "psc"]
+    success_url = reverse_lazy('potvrzeni_organizace')
+
+
+class PotvrzeniOrganizace(TemplateView):
+    template_name = "crm/organizace/potvrzeni.html"
+
+
+
+
+
+
+
+class VytvorKontaktOrganizaci(CreateView):
+    model = models.Kontakt
+    template_name = "crm/kontakt/pridani.html"
+    fields = ["jmeno", "prijmeni", "email", "datum_posledniho_kontaktu"]
+    success_url = reverse_lazy('potvrzeni_kontaktu')
+
+    def form_valid(self, form):
+        id_organizace = self.kwargs['pk']
+        organizace = models.Organizace.objects.get(pk=id_organizace)
+        form.instance.organizace = organizace
+        return super().form_valid(form)

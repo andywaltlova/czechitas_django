@@ -1,0 +1,15 @@
+{% extends "crm/base.html" %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div class='kontakt'>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+        <input type="submit" value="Submit" class="btn btn-primary">
+        {% endbuttons %}
+    </form>
+</div>
+{% endblock %}

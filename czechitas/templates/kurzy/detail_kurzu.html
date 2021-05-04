@@ -1,5 +1,6 @@
 {% extends "kurzy/base.html" %}
 
+{% load bootstrap4 %}
 {% block content %}
 <h2>{{ object.nazev }}</h2>
 
@@ -9,5 +10,10 @@
 <p>{{ object.cena }} Kč</p>
 
 <p>{{ object.popis }}</p>
+
+<p>
+{% url 'prihlaska' object.pk as target_url %}
+{% bootstrap_button "Přihlásit se" href=target_url button_type="link" button_class="btn-info" %}
+</p>
 
 {% endblock %}
