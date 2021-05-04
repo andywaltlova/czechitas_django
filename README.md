@@ -36,5 +36,21 @@ Umožni uživatelům prohlédnout si detaily organizace.
 - Vytvoř pohledy pro zobrazení detailu organizace.
 - Pohledu vytvoř šablonu a provázej je pomocí odkazů s pohledy na seznam organizací. Na stránce zobrazuj všechny informace, které máš uložené v databázi.
 
-## Bonus
+### Bonus
 Obdobným způsobem umožni uživatelům prohlédnout si detaily kontaktu.
+
+## Week 12 (4.5.2021)
+
+### ČÁST 1
+Vrať se ke své aplikaci crm pro správu kontaktů.
+
+- Pokud máš zájem, použij ve cvičení Bootstrap a vytvoř si šablonu base.html a používej tagy pro Bootstrap v dalších bodech.
+- Přidej do aplikace formulář na přidání kontaktu. Vytvoř šablonu, která bude obsahovat tag pro vložení formuláře. Dále přidej pohled a nastav potřebné atributy. Počítej, že chceme zobrazit ve formuláři všechna pole, které má model Kontakt.
+- Pohledu přidej URL adresu.
+- Ověř, že vše funguje tím, že si otevřeš cílovou stránku, na které je daný formulář. Zkus pro některou organizaci vytvořit nový kontakt.
+
+### ČÁST 2
+- Vytvoř nový pohled pohled pro vytvoření kontaktu, který nebude mít pole organizace, ale bude organizaci číst z URL adresy. Pohled může používat stejnou šablonu jako ten, který jsi použil(a) v předchozím cvičení.
+- Nastav URL adresu pohledu, aby s ID orgaizace počítala, tj. aby obsahovala část <int:pk>.
+- Na stránku orgaizace přidej tlačítko s textem “Přidej kontakt”, které tě přesměruje na stránku s formulářem na přidání kontaktu. Nezapomeň, že výsledná adresa musí obsahovat ID organzace.
+- Ověř, že vše funguje tím, že pomocí nového formuláře vytvoříš kontakt.
